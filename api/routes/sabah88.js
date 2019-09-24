@@ -17,7 +17,7 @@ router.get('/', (req, res, next) => {
     if (!error && response.statusCode == 200) {
       const $ = cheerio.load(html);
       $('#sabah88').each((i, el) => {
-        let resultDate = $(el).find('.resultdrawdate').text().replace(/\s/g, '    ');
+        let resultDate = $(el).find('.resultdrawdate').text().replace(/\s/g, ' ');
         let resultDraw = resultDate.substr(resultDate.indexOf(")") + 1)
         resultDate2.push(resultDraw)
         resultDate = resultDate.slice(6,16)
